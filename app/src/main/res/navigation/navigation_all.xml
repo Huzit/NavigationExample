@@ -22,7 +22,14 @@
         android:id="@+id/anotherFragment"
         android:name="com.recycler.navigationexample.AnotherFragment"
         android:label="fragment_another"
-        tools:layout="@layout/fragment_another" />
+        tools:layout="@layout/fragment_another" >
+        <action
+                android:id="@+id/action_anotherFragment_to_subFragment2"
+                app:destination="@id/subFragment"/>
+        <action
+                android:id="@+id/action_anotherFragment_to_mainFragment2"
+                app:destination="@id/mainFragment"/>
+    </fragment>
     <fragment
         android:id="@+id/subFragment"
         android:name="com.recycler.navigationexample.SubFragment"
