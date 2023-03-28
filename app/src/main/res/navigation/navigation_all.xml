@@ -3,17 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_all"
-    app:startDestination="@id/mainActivity2">
+    app:startDestination="@id/mainFragment">
     <activity
-        android:id="@+id/mainActivity2"
+        android:id="@+id/mainActivity"
         android:name="com.recycler.navigationexample.MainActivity"
         android:label="activity_main"
-        tools:layout="@layout/activity_main"/>
+        tools:layout="@layout/activity_main" />
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.recycler.navigationexample.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" >
+        tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_anotherFragment"
             app:destination="@id/anotherFragment" />
@@ -27,7 +27,7 @@
         android:id="@+id/subFragment"
         android:name="com.recycler.navigationexample.SubFragment"
         android:label="fragment_sub"
-        tools:layout="@layout/fragment_sub" >
+        tools:layout="@layout/fragment_sub">
         <action
             android:id="@+id/action_subFragment_to_anotherFragment2"
             app:destination="@id/anotherFragment" />
