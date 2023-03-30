@@ -20,16 +20,17 @@ class MainActivity : AppCompatActivity() {
         initBind()
         setBottomNav()
     }
-
+    //바인딩
     private fun initBind(){
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
-
+    //바텀 네비 설정
     private fun setBottomNav(){
+        //FragmentContainerView를 NavHostFragment로 가져옴
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainer) as NavHostFragment
+        //바텀 네비게이션에 들어갈 네비게이션 컨트롤러 정의
         val navController = navHostFragment.findNavController()
-        navController.findDestination(R.id.mainFragment)
         binding.bottomNav.setupWithNavController(navController)
     }
 }

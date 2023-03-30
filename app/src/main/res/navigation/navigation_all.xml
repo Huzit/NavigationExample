@@ -24,11 +24,17 @@
         android:label="fragment_another"
         tools:layout="@layout/fragment_another" >
         <action
-                android:id="@+id/action_anotherFragment_to_subFragment2"
+                android:id="@+id/action_anotherFragment_to_subFragment"
                 app:destination="@id/subFragment"/>
         <action
-                android:id="@+id/action_anotherFragment_to_mainFragment2"
+                android:id="@+id/action_anotherFragment_to_mainFragment"
                 app:destination="@id/mainFragment"/>
+        <argument
+            android:name="test"
+            app:argType="string" />
+        <argument
+            android:name="beforeFrag"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/subFragment"
@@ -36,7 +42,7 @@
         android:label="fragment_sub"
         tools:layout="@layout/fragment_sub">
         <action
-            android:id="@+id/action_subFragment_to_anotherFragment2"
+            android:id="@+id/action_subFragment_to_anotherFragment"
             app:destination="@id/anotherFragment" />
     </fragment>
 </navigation>
