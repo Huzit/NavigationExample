@@ -17,6 +17,12 @@
         <action
             android:id="@+id/action_mainFragment_to_anotherFragment"
             app:destination="@id/anotherFragment" />
+        <action
+                android:id="@+id/action_mainFragment_to_oneFragment"
+                app:destination="@id/oneFragment"
+                app:popUpTo="@id/anotherFragment"
+                app:popUpToInclusive="true"
+                />
     </fragment>
     <fragment
         android:id="@+id/anotherFragment"
@@ -45,4 +51,9 @@
             android:id="@+id/action_subFragment_to_anotherFragment"
             app:destination="@id/anotherFragment" />
     </fragment>
+    <fragment
+            android:id="@+id/oneFragment"
+            android:name="com.recycler.navigationexample.oneFragment"
+            android:label="fragment_one"
+            tools:layout="@layout/fragment_one"/>
 </navigation>

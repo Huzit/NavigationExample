@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.findNavController
+import androidx.navigation.navOptions
 import com.recycler.navigationexample.databinding.FragmentMainBinding
 
 class MainFragment : Fragment() {
@@ -36,6 +38,10 @@ class MainFragment : Fragment() {
             val action = MainFragmentDirections.actionMainFragmentToAnotherFragment(amount, t)
             //화면 전환 액션
             v.findNavController().navigate(action)
+        }
+        binding.toOneButton.setOnClickListener {
+            val action = MainFragmentDirections.actionMainFragmentToOneFragment()
+            it.findNavController().navigate(action)
         }
     }
 

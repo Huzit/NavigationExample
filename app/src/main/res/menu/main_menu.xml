@@ -10,4 +10,9 @@
         android:title="서브"
         android:enabled="true"
         />
+
+    <item
+        android:id="@+id/oneFragment"
+        android:title="원"
+        android:enabled="true"/>
 </menu>
