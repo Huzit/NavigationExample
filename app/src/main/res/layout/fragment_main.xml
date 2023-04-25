@@ -33,4 +33,14 @@
             app:layout_constraintTop_toBottomOf="@id/mainNextButton"
             />
 
+    <Button
+        android:id="@+id/oneNextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="one으로 가는 버튼"
+        app:layout_constraintTop_toBottomOf="@id/mainNextButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

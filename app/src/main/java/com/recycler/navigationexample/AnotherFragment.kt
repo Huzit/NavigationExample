@@ -29,7 +29,6 @@ class AnotherFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Toast.makeText(requireContext(), args.test, Toast.LENGTH_SHORT).show()
         setButton()
     }
 

@@ -18,11 +18,8 @@
             android:id="@+id/action_mainFragment_to_anotherFragment"
             app:destination="@id/anotherFragment" />
         <action
-                android:id="@+id/action_mainFragment_to_oneFragment"
-                app:destination="@id/oneFragment"
-                app:popUpTo="@id/anotherFragment"
-                app:popUpToInclusive="true"
-                />
+            android:id="@+id/action_mainFragment_to_oneFragment"
+            app:destination="@id/oneFragment" />
     </fragment>
     <fragment
         android:id="@+id/anotherFragment"
@@ -50,10 +47,20 @@
         <action
             android:id="@+id/action_subFragment_to_anotherFragment"
             app:destination="@id/anotherFragment" />
+        <action
+            android:id="@+id/action_subFragment_self"
+            app:destination="@id/subFragment" />
+        <action
+            android:id="@+id/action_subFragment_to_oneFragment"
+            app:destination="@id/oneFragment" />
     </fragment>
     <fragment
-            android:id="@+id/oneFragment"
-            android:name="com.recycler.navigationexample.oneFragment"
-            android:label="fragment_one"
-            tools:layout="@layout/fragment_one"/>
+        android:id="@+id/oneFragment"
+        android:name="com.recycler.navigationexample.OneFragment"
+        android:label="fragment_one"
+        tools:layout="@layout/fragment_one" >
+        <action
+            android:id="@+id/action_oneFragment_to_subFragment"
+            app:destination="@id/subFragment" />
+    </fragment>
 </navigation>

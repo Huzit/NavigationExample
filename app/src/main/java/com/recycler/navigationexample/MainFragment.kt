@@ -1,12 +1,15 @@
 package com.recycler.navigationexample
 
+import android.app.Activity
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.navOptions
 import com.recycler.navigationexample.databinding.FragmentMainBinding
 
@@ -31,6 +34,7 @@ class MainFragment : Fragment() {
     }
 
     fun setButton(){
+        requireActivity()
         binding.mainNextButton.setOnClickListener {v ->
             //navigation에 추가한 argument 타입에 따라 데이터 전달 가능
             val amount = "From Main Fragment"
@@ -39,9 +43,14 @@ class MainFragment : Fragment() {
             //화면 전환 액션
             v.findNavController().navigate(action)
         }
-        binding.toOneButton.setOnClickListener {
-            val action = MainFragmentDirections.actionMainFragmentToOneFragment()
-            it.findNavController().navigate(action)
+
+        binding.oneNextButton.setOnClickListener {
+            it.findNavController().navigate(MainFragmentDirections.actionMainFragmentToOneFragment(), navOptions {
+                restoreState = true
+                popUpTo(findNavController().graph.startDestinationId){
+                    saveState = true
+                }
+            })
         }
     }
 

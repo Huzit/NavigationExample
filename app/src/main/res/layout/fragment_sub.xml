@@ -26,4 +26,21 @@
             app:layout_constraintBottom_toBottomOf="parent"
             />
 
+    <Button
+        android:id="@+id/setNowButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="지금 화면"
+        app:layout_constraintEnd_toEndOf="@+id/subButton"
+        app:layout_constraintTop_toBottomOf="@+id/subButton" />
+
+    <Button
+        android:id="@+id/setOneBt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="원 으로 가기"
+        app:layout_constraintEnd_toEndOf="@+id/setNowButton"
+        app:layout_constraintStart_toStartOf="@+id/setNowButton"
+        app:layout_constraintTop_toBottomOf="@+id/setNowButton" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
