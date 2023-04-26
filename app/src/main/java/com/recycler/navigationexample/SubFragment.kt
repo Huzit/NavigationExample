@@ -49,9 +49,10 @@ class SubFragment : Fragment() {
         binding.setOneBt.setOnClickListener {
             val action = SubFragmentDirections.actionSubFragmentToOneFragment()
             it.findNavController().navigate(action, navOptions {
+                restoreState = true
                 popUpTo(findNavController().graph.startDestinationId){
-                    saveState = false
-                    inclusive = false
+                    saveState = true
+                    inclusive = true
                 }
             })
         }

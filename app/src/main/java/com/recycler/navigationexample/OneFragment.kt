@@ -1,13 +1,16 @@
 package com.recycler.navigationexample
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.navigation.NavOptions
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.navOptions
+import androidx.appcompat.R
 import com.recycler.navigationexample.databinding.FragmentOneBinding
 
 class OneFragment : Fragment() {
@@ -29,11 +32,12 @@ class OneFragment : Fragment() {
         binding.toSubBt.setOnClickListener {
             val action = OneFragmentDirections.actionOneFragmentToSubFragment()
             it.findNavController().navigate(action, navOptions {
-                restoreState = false
+                restoreState = true
                 popUpTo(findNavController().graph.startDestinationId){
                     saveState = true
                     inclusive = false
                 }
+
             })
         }
     }

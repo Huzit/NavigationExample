@@ -30,8 +30,8 @@
                 android:id="@+id/action_anotherFragment_to_subFragment"
                 app:destination="@id/subFragment"/>
         <action
-                android:id="@+id/action_anotherFragment_to_mainFragment"
-                app:destination="@id/mainFragment"/>
+            android:id="@+id/action_anotherFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
         <argument
             android:name="test"
             app:argType="string" />

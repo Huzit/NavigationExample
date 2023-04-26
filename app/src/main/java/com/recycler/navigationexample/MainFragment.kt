@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.NavGraph.Companion.findStartDestination
+import androidx.navigation.NavOptions
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.navOptions
@@ -47,8 +48,11 @@ class MainFragment : Fragment() {
         binding.oneNextButton.setOnClickListener {
             it.findNavController().navigate(MainFragmentDirections.actionMainFragmentToOneFragment(), navOptions {
                 restoreState = true
-                popUpTo(findNavController().graph.startDestinationId){
+                popUpTo(findNavController().graph.startDestinationRoute ?: ""){
                     saveState = true
+                }
+                anim {
+
                 }
             })
         }
